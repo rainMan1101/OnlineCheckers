@@ -1,0 +1,41 @@
+﻿<Application x:Class="OnlineCheckers.Client.Views.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewmodels="clr-namespace:OnlineCheckers.Client.ViewModels"
+             xmlns:view ="clr-namespace:OnlineCheckers.Client.Views"
+             xmlns:pages ="clr-namespace:OnlineCheckers.Client.Views.Pages"
+             xmlns:subpages ="clr-namespace:OnlineCheckers.Client.Views.Pages.Subpages"
+             xmlns:boards = "clr-namespace:OnlineCheckers.Client.Views.Pages.Subpages.PlayBoards"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!---->
+        <DataTemplate DataType="{x:Type viewmodels:CMainViewModel}">
+            <view:MainWindow/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:CSignInViewModel}">
+            <pages:CSignInView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:CUserViewModel}">
+            <pages:CUserView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:CAddGameViewModel}">
+            <subpages:CAddGameView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:CPlayerViewModel}">
+            <subpages:CPlayerView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type viewmodels:CWatchablePlayBoardViewModel}">
+            <boards:WatchablePlayBoardView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type viewmodels:CMovablePlayBoardViewModel}">
+            <boards:MovablePlayBoardView/>
+        </DataTemplate>
+        
+    </Application.Resources>
+</Application>
